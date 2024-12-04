@@ -1,26 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Snowflakes : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public SnowflakePool SnowflakePool;
+    public GameObject SnowflakePrefab;
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            Destroy(collision.gameObject);
+            SnowflakePool.ReturnSnowflake(gameObject, SnowflakePrefab);
         }
     }
 }
