@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float moveDistance = 5f;
+    public float moveSpeed = 5f;
 
     private Rigidbody2D rb;
 
@@ -16,14 +16,14 @@ public class Player : MonoBehaviour
         float moveX = Input.GetAxis("Horizontal");
         float moveY = Input.GetAxis("Vertical");   
 
-        Vector2 movement = new Vector2(moveX, moveY).normalized * moveDistance;
+        Vector2 movement = new Vector2(moveX, moveY).normalized * moveSpeed;
 
         rb.velocity = movement;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Snowflake"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(collision.gameObject);
         }
