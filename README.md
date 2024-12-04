@@ -9,7 +9,7 @@ Player spawns with snowflakes, singleton makes sure only one game manager is act
 
 How it was done:
 Game Manager: Makes sure only one is active at a time and if theres more then one then it destroys the duplicates.
-Snowflakes: Randomly spawns every 2~ seconds, spawns along -7 to 7 on the x axis and -1 to 1 on the y axis. Initially loads with 10 unactive snowflakes and if theres snowflakes in the pool then it spawns from the pool and if not then it creates more to add towards the pool.
+Snowflakes: Randomly spawns every 2~ seconds, spawns randomly on the map. Initially loads with 10 unactive snowflakes and if theres snowflakes in the pool then it spawns from the pool and if not then it creates more to add towards the pool.
 
 Why it was done:
 Snowflake optimization or else the game will get really laggy over time.
